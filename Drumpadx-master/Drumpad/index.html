@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DrumPAdX</title>
+    <link href="bp/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <table class="center">
+        <tr style="padding:20px 20px 20px 20px;">
+            <td style="padding:20px 20px 20px 20px;"><button class="btn btn-warning button" onclick="play('sounds/snare.wav')" id="snare">Snare</button></td>
+            <td style="padding:20px 20px 20px 20px;"><button class="btn btn-warning button" onclick="play('sounds/openhh.wav')" id="open">OpenHh</button></td>
+        </tr>
+        <tr style="padding:20px 20px 20px 20px;">
+            <td style="padding:20px 20px 20px 20px;"><button class="btn btn-warning button" onclick="play('sounds/clap.wav')" id="clap">Clap</button></td>
+            <td style="padding:20px 20px 20px 20px;"><button class="btn btn-warning button" onclick="play('sounds/closehh.wav')" id = "close">CloseHH</button></td>
+        </tr>
+        <tr style="padding:20px 20px 20px 20px;">
+            <td style="padding:20px 20px 20px 20px;">
+                <button class="btn btn-warning button" onclick="play('sounds/kick.wav')" id="kick">Kick</button>
+            </td style="padding:20px 20px 20px 20px;">
+            <td style="padding:20px 20px 20px 20px;" onclick="play('sounds/rim.wav')">
+                <button class="btn btn-warning button"  id ="rim">Rimshot</button>
+            </td style="padding:20px 20px 20px 20px;">
+        </tr>
+    </table>
+    <script lang="javascript">
+        function play(url){
+            const aud = new Audio(url)
+            aud.play()
+        }
+        document.addEventListener('keydown',(event) =>{
+            const keyname = event.key
+            if(keyname == "a"){
+                changecol(document.getElementById('kick'),"#ffffff88")
+                console.log("Kick")
+                play('sounds/kick.wav')
+            }
+            if(keyname == "s"){
+                changecol(document.getElementById('snare'),"#ffffff88")
+                console.log("Snare")
+                play('sounds/snare.wav')
+            }
+            if(keyname == "k"){
+                changecol(document.getElementById('close'),"#ffffff88")
+                console.log("CloseHH")
+                play('sounds/closehh.wav')
+            }
+            if(keyname == "l"){
+                changecol(document.getElementById('open'),"#ffffff88")
+                console.log("Openhh")
+                play('sounds/openhh.wav')
+            }
+            if(keyname == "v"){
+                changecol(document.getElementById('rim'),"#ffffff88")
+                console.log("Rimshot")
+                play('sounds/rim.wav')
+            }
+            if(keyname == "d"){
+                changecol(document.getElementById('clap'),"#ffffff88")
+                console.log("Clap")
+                play('sounds/clap.wav')
+            }
+        })
+    document.addEventListener('keyup' , (event) =>{
+        const keyname = event.key
+            if(keyname == "a"){
+                changecol(document.getElementById('kick'),"#ffc107")
+            }
+            if(keyname == "s"){
+                changecol(document.getElementById('snare'),"#ffc107")
+            }
+            if(keyname == "k"){
+                changecol(document.getElementById('close'),"#ffc107")
+            }
+            if(keyname == "l"){
+                changecol(document.getElementById('open'),"#ffc107")
+            }
+            if(keyname == "v"){
+                changecol(document.getElementById('rim'),"#ffc107")
+            }
+            if(keyname == "d"){
+                changecol(document.getElementById('clap'),"#ffc107")
+            }
+    })
+        function changecol(elemnt,col){
+            elemnt.style.backgroundColor = col;
+        }
+        //#ffc107
+    </script>
+</body>
+</html>

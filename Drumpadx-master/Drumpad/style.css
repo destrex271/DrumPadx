@@ -1,0 +1,16 @@
+.button{
+    width:200px;
+    height:150px;
+    border:none;
+    display: block;
+    padding: 10px 10px 10px 10px;
+}
+body{
+    background-image: linear-gradient(to right, red , rgb(255, 174, 0));
+    text-align:center;
+}
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top:150px;
+}
